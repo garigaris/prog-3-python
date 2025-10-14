@@ -2,7 +2,7 @@
 ## Потемкин Роман Юрьевич 
 
 [Лабораторная работа №2](https://github.com/garigaris/prog-3-python/tree/main/LRS/LR2) \
-[Лабораторная работа №3]() \
+[Лабораторная работа №3](https://github.com/garigaris/prog-3-python/blob/main/LRS/LR3/README.md) \
 [Лабораторная работа №4]() \
 [Лабораторная работа №5]() \
 [Лабораторная работа №6]() \
