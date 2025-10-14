@@ -65,8 +65,13 @@ test_height_zero_returns_root (__main__.TestBinaryTree.test_height_zero_returns_
 test_negative_height_raises_exception (__main__.TestBinaryTree.test_negative_height_raises_exception)
 Тест 3: Отрицательная высота вызывает исключение ... ok
 
-test_normal_case_height_2 (__main__.TestBinaryTree.test_normal_case_height_2)
-Тест 1: Нормальный случай с высотой 2 ... ok
+test_normal_case_height_1 (__main__.TestBinaryTree.test_normal_case_height_1)
+Тест 1: Нормальный случай с высотой 1 ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
 ```
 
 ---
