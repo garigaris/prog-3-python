@@ -39,3 +39,5 @@ def gen_bin_tree(
         'left': gen_bin_tree(left_child, height-1, left_leaf, right_leaf),
         'right': gen_bin_tree(right_child, height-1, left_leaf, right_leaf)
     }
+
+print(gen_bin_tree( left_leaf=lambda x: x + 1, right_leaf=lambda x: x + 1, height=1, ))
