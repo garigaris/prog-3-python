@@ -2,6 +2,8 @@ from typing import Callable, Dict, List
 
 class ValidationError(Exception):
     pass
+
+
 BinaryTreeType = Dict[int, List["BinaryTreeType"]]
 
 
@@ -41,12 +43,14 @@ def _gen_bin_tree_without_validation(root: int = 8,
         return {root: []}
 
     lst = [[] for _ in range(height + 1)]
-    lst[0].append(root)
+    lst[0].append(str(root))
     for level in range(1, height + 1):
         countOfChildren = 2 ** level
         for i in range(0, countOfChildren, 2):
-            lst[level].append(left_leaf(lst[level - 1][i // 2]))
-            lst[level].append(right_leaf(lst[level - 1][i // 2]))
+            stringLeft = str(left_leaf(int(lst[level - 1][i // 2])))
+            stringRight = str(right_leaf(int(lst[level - 1][i // 2])))
+            lst[level].append(stringLeft)
+            lst[level].append(stringRight)
 
     
 

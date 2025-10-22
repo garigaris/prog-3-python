@@ -18,6 +18,8 @@ from typing import Callable, Dict, List
 
 class ValidationError(Exception):
     pass
+
+
 BinaryTreeType = Dict[int, List["BinaryTreeType"]]
 
 
@@ -31,11 +33,11 @@ def _gen_bin_tree_without_validation(root: int = 8,
 
     Args:
         root: Корень дерева. По умолчанию 8.
-        height: Высота дерева. По умолчанию 3.
+        height: Высота дерева. По умолчанию 4.
         left_leaf: Функция для вычисления значения левого потомка. 
-                  По умолчанию lambda x: x * 2.
+                  По умолчанию lambda x: x  + x // 2.
         right_leaf: Функция для вычисления значения правого потомка. 
-                   По умолчанию lambda y: y + 1.
+                   По умолчанию lambda y: y ** 2.
 
     Returns:
         Tree: Бинарное дерево в формате {value: [left_child, right_child]}, 
@@ -57,12 +59,14 @@ def _gen_bin_tree_without_validation(root: int = 8,
         return {root: []}
 
     lst = [[] for _ in range(height + 1)]
-    lst[0].append(root)
+    lst[0].append(str(root))
     for level in range(1, height + 1):
         countOfChildren = 2 ** level
         for i in range(0, countOfChildren, 2):
-            lst[level].append(left_leaf(lst[level - 1][i // 2]))
-            lst[level].append(right_leaf(lst[level - 1][i // 2]))
+            stringLeft = str(left_leaf(int(lst[level - 1][i // 2])))
+            stringRight = str(right_leaf(int(lst[level - 1][i // 2])))
+            lst[level].append(stringLeft)
+            lst[level].append(stringRight)
 
     
 
@@ -101,9 +105,10 @@ def gen_bin_tree(root: int = 8,
         print(e)
         return None
 
+
+
 ````
 
----
 
 ## Тесты: 
 

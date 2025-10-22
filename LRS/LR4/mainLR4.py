@@ -1,4 +1,4 @@
 from GenerateBinaryTree import gen_bin_tree
 
-print(gen_bin_tree(height=2, root=8))
+print(gen_bin_tree())
 
