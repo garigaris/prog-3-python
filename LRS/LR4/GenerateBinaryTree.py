@@ -7,7 +7,7 @@ class ValidationError(Exception):
 BinaryTreeType = Dict[int, List["BinaryTreeType"]]
 
 
-def _gen_bin_tree_without_validation(root: int = 8,
+def __gen_bin_tree_without_validation(root: int = 8,
                                      height: int = 4,
                                      left_leaf: Callable[[int], int] = lambda x: x + x // 2,
                                      right_leaf: Callable[[int], int] = lambda y: y ** 2) -> BinaryTreeType:
@@ -83,7 +83,7 @@ def gen_bin_tree(root: int = 8,
                  left_leaf: Callable[[int], int] = lambda x: x + x // 2,
                  right_leaf: Callable[[int], int] = lambda y: y ** 2):
     try:
-        result = _gen_bin_tree_without_validation(root, height, left_leaf, right_leaf) 
+        result = __gen_bin_tree_without_validation(root, height, left_leaf, right_leaf) 
         return result
     except ValidationError as e:
         print(e)

@@ -1,5 +1,5 @@
 import unittest
-from GenerateBinaryTree import gen_bin_tree, ValidationError, _gen_bin_tree_without_validation
+from GenerateBinaryTree import gen_bin_tree, ValidationError, __gen_bin_tree_without_validation
 
 
 class TestBinaryTree(unittest.TestCase):
@@ -55,11 +55,11 @@ class TestBinaryTree(unittest.TestCase):
     def test_negative_height(self):
         """Тест 5: отрицательная height вызывает ValidationError"""
         with self.assertRaises(ValidationError) as context:
-            _gen_bin_tree_without_validation(height=-1)
+            __gen_bin_tree_without_validation(height=-1)
         self.assertEqual(str(context.exception), "height дерева не может быть отрицательной")
     def test_is_left_and_right_function(self):
         with self.assertRaises(ValidationError) as context:
-            _gen_bin_tree_without_validation(left_leaf=2, right_leaf={})
+            __gen_bin_tree_without_validation(left_leaf=2, right_leaf={})
         self.assertEqual(str(context.exception), "left_leaf и right_leaf должны быть функциями")
 
     
